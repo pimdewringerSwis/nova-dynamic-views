@@ -2,7 +2,9 @@
 
 namespace ShuvroRoy\NovaDynamicViews;
 
-class CustomComponents implements \JsonSerializable
+use JsonSerializable;
+
+class CustomComponents implements JsonSerializable
 {
     protected string $class;
 
@@ -10,7 +12,7 @@ class CustomComponents implements \JsonSerializable
 
     public static function make(string $class = ''): static
     {
-        $obj = new static;
+        $obj = new static();
         $obj->class = $class;
 
         return $obj;
